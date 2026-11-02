@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Maquette GENA · Direct</title>
+<style>
+@font-face{font-family:Schibsted;src:url(assets/fonts/schibsted-grotesk-latin-wght-normal.woff2) format("woff2");font-weight:400 900;font-display:swap}
+:root{--y:#FFD400;--k:#000;--w:#fff;--g:#F2F2EE}
+*{box-sizing:border-box}body{margin:0;background:var(--y);color:var(--k);font:400 19px/1.45 Schibsted,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}:focus-visible{outline:3px solid #000;outline-offset:3px}
+.top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding:14px clamp(16px,3vw,40px);background:#000;color:#fff}
+.logo{font-weight:900;font-size:26px;letter-spacing:-.02em;text-decoration:none}
+.open{display:flex;align-items:center;gap:8px;font-size:15px}.open i{width:10px;height:10px;border-radius:50%;background:#62E36B}.open.closed i{background:#FF7A6B}
+.top .tel{font-weight:800;font-size:20px;text-decoration:none;color:var(--y)}
+.lang{display:flex;gap:2px;font-size:14px;margin-left:auto}.lang a{text-decoration:none;padding:6px}.lang a[aria-current]{font-weight:800;color:var(--y)}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);min-height:calc(100vh - 62px);min-height:calc(100svh - 62px)}
+.ask{padding:clamp(28px,4.5vw,70px) clamp(16px,3vw,40px) 96px;display:flex;flex-direction:column;justify-content:center}
+h1{font-weight:850;font-size:clamp(46px,6.7vw,108px);line-height:.95;letter-spacing:-.035em;margin:0 0 clamp(22px,3vw,40px)}
+.ch{display:grid;gap:8px}.c{display:flex;justify-content:space-between;gap:14px;align-items:center;width:100%;background:#000;color:#fff;border:0;border-radius:14px;padding:clamp(16px,1.8vw,24px) clamp(18px,2vw,28px);font:750 clamp(21px,2.2vw,32px)/1.1 Schibsted,sans-serif;text-align:left;cursor:pointer;transition:transform .16s}
+.c:hover{transform:translateX(8px)}.c small{display:block;font:400 clamp(15px,1.2vw,17px) Schibsted,sans-serif;color:#D7D7D2;margin-top:5px}.c svg{flex:none}
+.c[aria-expanded=true]{background:#fff;color:#000}.c[aria-expanded=true] small{color:#333}
+.panel{background:#fff;border-radius:14px;padding:20px;margin:0}.panel[hidden]{display:none}.panel label{display:block;font-size:15px;font-weight:600;margin-bottom:5px}
+.panel input,.panel textarea{width:100%;font:inherit;border:2px solid #000;border-radius:8px;padding:11px;min-height:48px;background:#fff}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.drop{grid-column:1/-1;background:var(--y);border:2px dashed #000;border-radius:8px;font:700 17px Schibsted,sans-serif;padding:18px;cursor:pointer}
+.go{grid-column:1/-1;background:#000;color:#fff;border:0;border-radius:8px;padding:15px;font:750 18px Schibsted,sans-serif;cursor:pointer}
+.big-tel{display:inline-block;background:#000;color:var(--y);font-weight:850;font-size:clamp(28px,3.6vw,48px);padding:12px 22px;border-radius:10px;text-decoration:none}
+.vis{position:relative;min-height:380px}.vis canvas{position:absolute;inset:0;width:100%;height:100%}
+.vis p{position:absolute;left:clamp(16px,2vw,28px);top:clamp(14px,2vw,28px);margin:0;font-weight:750;font-size:clamp(18px,1.6vw,23px);transition:opacity .4s}
+@media(max-width:860px){.hero{grid-template-columns:1fr;min-height:0}.vis{height:82vw;order:-1;min-height:280px}.ask{padding-top:16px}}
+section{padding:clamp(64px,8vw,120px) clamp(16px,3vw,40px)}
+h2{font-weight:850;font-size:clamp(36px,5.2vw,80px);line-height:.98;letter-spacing:-.03em;margin:0 0 clamp(28px,4vw,52px);max-width:17ch}
+.steps{background:#000;color:#fff}.st{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:n;padding:0;margin:0}
+.st li{list-style:none;counter-increment:n;border-left:3px solid var(--y);padding:0 clamp(14px,1.8vw,26px) 8px}.st li:before{content:counter(n);display:block;font-weight:900;font-size:clamp(66px,9vw,140px);line-height:1;color:var(--y);letter-spacing:-.04em;margin-bottom:12px}
+.st h3{font-size:clamp(21px,2vw,29px);line-height:1.1;margin:0 0 6px;font-weight:800}.st p{margin:0;color:#DADAD5}
+@media(max-width:800px){.st{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}}
+.proof{background:var(--g)}.pgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,80px);align-items:start}
+@media(max-width:860px){.pgrid{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:clamp(18px,1.6vw,22px)}th{text-align:left;font-weight:700}td,th{padding:13px 0;border-top:2px solid #000}td:last-child{text-align:right;font-weight:850}
+.fam{background:var(--y);border-radius:18px;padding:clamp(22px,3vw,40px)}.fam h3{font-weight:850;font-size:clamp(28px,3.4vw,50px);line-height:1;letter-spacing:-.025em;margin:0 0 14px}.fam p{margin:0 0 12px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.tags span{background:#000;color:#fff;border-radius:999px;padding:8px 14px;font-size:16px;font-weight:600}
+footer{background:#000;color:#ddd;padding:28px clamp(16px,3vw,40px) 92px;display:flex;flex-wrap:wrap;gap:10px 40px;justify-content:space-between;font-size:15px}
+</style></head><body>
+<div class="top"><a class="logo" href="#">GENA</a><span class="open" id="open"><i></i><span id="ot"></span></span><div class="lang"><a href="#" aria-current="true" onclick="return false">FR</a><a href="#" data-lang="néerlandais">NL</a><a href="#" data-lang="anglais">EN</a></div><a class="tel" href="tel:+3267840240">067 84 02 40</a></div>
+<main>
+<div class="hero"><div class="ask"><h1>De quoi avez-vous besoin&nbsp;?</h1><div class="ch" id="ch">
+<button class="c" aria-expanded="false" data-p="a"><span>J'ai un plan à faire réaliser<small>Pièce unique, prototype ou série</small></span><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13h16M14 6l7 7-7 7"/></svg></button>
+<form class="panel" id="a" data-demo hidden><div class="pg"><button type="button" class="drop" onclick="demoToast('Ici, le client joindra son plan ou une photo.')">Déposer le plan ou une photo</button><div><label for="an">Nom et société</label><input id="an"></div><div><label for="am">E-mail</label><input id="am" type="email"></div><button class="go">Recevoir mon devis gratuit</button></div></form>
+<button class="c" aria-expanded="false" data-p="b"><span>Ma machine est en panne<small>Pièce à reproduire ou à réparer</small></span><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13h16M14 6l7 7-7 7"/></svg></button>
+<div class="panel" id="b" hidden><p style="margin:0 0 12px">Le plus rapide : appelez-nous et préparez le plan de la machine ou une photo de la pièce.</p><a class="big-tel" href="tel:+3267840240">067 84 02 40</a></div>
+<button class="c" aria-expanded="false" data-p="d"><span>Je veux une machine sur mesure<small>Conception selon votre cahier des charges</small></span><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13h16M14 6l7 7-7 7"/></svg></button>
+<form class="panel" id="d" data-demo hidden><div class="pg"><div style="grid-column:1/-1"><label for="dd">Décrivez votre besoin</label><textarea id="dd" rows="3"></textarea></div><div><label for="dn">Nom et société</label><input id="dn"></div><div><label for="dm">E-mail</label><input id="dm" type="email"></div><button class="go">Être recontacté</button></div></form>
+</div></div>
+<div class="vis"><canvas id="c" role="img" aria-label="Un plan dessiné en traits noirs devient une pièce d'acier"></canvas><p id="cap">Votre plan</p></div></div>
+<section class="steps"><h2>Comment ça se passe</h2><ol class="st"><li><h3>Vous envoyez</h3><p>Le plan, le modèle ou une photo de la pièce.</p></li><li><h3>Nous étudions</h3><p>La faisabilité et le cahier des charges.</p></li><li><h3>Devis gratuit</h3><p>Avec le prix et le délai de fabrication.</p></li><li><h3>Livraison</h3><p>Pièce fabriquée, contrôlée et livrée.</p></li></ol></section>
+<section class="proof"><div class="pgrid"><div><h2>L'atelier</h2><table><caption style="position:absolute;left:-9999px">Machines de l'atelier</caption><tr><th scope="row">Fraiseuses CNC</th><td>6</td></tr><tr><th scope="row">Tours CNC</th><td>5</td></tr><tr><th scope="row">Scies de débitage</th><td>2</td></tr><tr><th scope="row">Rectifieuse cylindrique</th><td>1</td></tr><tr><th scope="row">Honeuse</th><td>1</td></tr><tr><th scope="row">Microbilleuse</th><td>1</td></tr><tr><th scope="row">Surface de l'usine</th><td>630 m²</td></tr></table></div>
+<aside class="fam"><h3>Une famille, depuis 1979.</h3><p>GENA est une entreprise familiale installée à Nivelles, à mi-chemin entre Mons et Bruxelles.</p><p>Elle travaille l'acier, l'aluminium, le laiton et les polyamides.</p><div class="tags"><span>Verrier</span><span>Médical et pharma</span><span>Naval</span><span>Alimentaire</span><span>Domotique</span></div></aside></div></section>
+</main>
+<footer><span>Rue de la Maîtrise 1, 1400 Nivelles</span><span>Lun. à jeu. 7h30-12h et 13h-16h, ven. 7h30-12h et 13h-14h</span><span>Mentions légales, confidentialité, cookies</span></footer>
+<script src="assets/engine.js"></script><script src="assets/shared.js"></script>
+<script>
+(function(){const f=new Intl.DateTimeFormat('fr-BE',{timeZone:'Europe/Brussels',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());const g=t=>f.find(x=>x.type===t).value;
+const d=g('weekday').replace('.','').toLowerCase(),m=+g('hour')*60+ +g('minute');const end=d==='ven'?840:d==='sam'||d==='dim'?0:960;
+const on=end&&m>=450&&m<end&&!(m>=720&&m<780);document.getElementById('ot').textContent=on?'Ouvert en ce moment':'Fermé en ce moment';if(!on)document.getElementById('open').classList.add('closed');})();
+document.querySelectorAll('.c').forEach(b=>b.addEventListener('click',()=>{const was=b.getAttribute('aria-expanded')==='true';
+document.querySelectorAll('.c').forEach(o=>{o.setAttribute('aria-expanded','false');document.getElementById(o.dataset.p).hidden=true;});
+if(!was){b.setAttribute('aria-expanded','true');document.getElementById(b.dataset.p).hidden=false;}}));
+const {createStage,parts,materials,THREE,reduced,webgl,fit,prep}=GENA3D;
+if(webgl()){
+ const stage=createStage(document.getElementById('c'),{fov:22,exposure:1.1,env:{base:0x5a5540,tint:0xfff6cf}});
+ stage.renderer.localClippingEnabled=true;
+ const geo=prep(parts.gear({teeth:20}));
+ const planeS=new THREE.Plane(new THREE.Vector3(0,1,0),-3),planeL=new THREE.Plane(new THREE.Vector3(0,-1,0),3);
+ const solid=new THREE.Mesh(geo,materials.steel({color:0xE4E6E8,roughness:.3,clippingPlanes:[planeS],side:THREE.DoubleSide}));
+ const lines=new THREE.LineSegments(new THREE.EdgesGeometry(geo,10),new THREE.LineBasicMaterial({color:0x000000,clippingPlanes:[planeL]}));
+ const g=new THREE.Group();g.add(solid,lines);stage.scene.add(g);
+ const cap=document.getElementById('cap'),vis=document.querySelector('.vis');
+ let t0=performance.now(),mx=0,my=0,cx=0,cy=0;
+ addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;},{passive:true});
+ const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+ (function f(now){
+  if(vis.getBoundingClientRect().bottom<0){requestAnimationFrame(f);return;}
+  const raw=reduced()?1:Math.max(0,(now-t0-900)/3400);const k=ease(Math.min(1,raw));
+  const y=3-k*6;planeS.constant=-y;planeL.constant=y;
+  cx+=(mx-cx)*.05;cy+=(my-cy)*.05;
+  g.rotation.set(-.62*k+cy*.25,.55*k+cx*.35+Math.sin((now-t0)*.0004)*.12*k,0);
+  cap.textContent=k>=.97?'Votre pièce':'Votre plan';
+  stage.camera.position.set(0,0,fit(stage.camera,2.75,{margin:1.14}));stage.camera.lookAt(0,0,0);
+  stage.render();requestAnimationFrame(f);
+ })(t0);
+}
+</script></body></html>

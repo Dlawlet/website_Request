@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Maquette GENA · Atelier</title>
+<style>
+@font-face{font-family:Archivo;src:url(assets/fonts/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{--petrol:#23272B;--deep:#16191C;--steel:#DDE0E2;--mist:#A7ADB2;--chip:#D08A52}
+*{box-sizing:border-box}html{background:var(--deep)}
+body{margin:0;background:var(--deep);color:var(--steel);font:400 18px/1.55 Archivo,system-ui,sans-serif;font-stretch:100%;overflow-x:clip}
+a{color:inherit}:focus-visible{outline:3px solid var(--chip);outline-offset:3px}
+header{position:fixed;z-index:20;top:0;left:0;right:0;display:flex;align-items:center;gap:24px;padding:18px clamp(16px,3vw,40px);mix-blend-mode:normal}
+.logo{font-weight:800;font-stretch:125%;font-size:24px;letter-spacing:.02em;text-decoration:none}
+header.solid{background:#16191Cee}
+header nav{display:flex;gap:22px;margin-left:auto;font-size:15px}header nav a{text-decoration:none}header nav a:hover{color:var(--chip)}
+.lang{display:flex;gap:6px;font-size:14px}.lang a{text-decoration:none;padding:6px}.lang a[aria-current]{color:var(--chip);font-weight:700}
+.quote{background:#fff;color:#16191C;text-decoration:none;padding:10px 16px;border-radius:999px;font-weight:650;font-size:15px}
+@media(max-width:900px){header nav{display:none}.lang{margin-left:auto}.quote{display:none}}
+.scene{height:520vh;position:relative}
+.pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(90% 90% at 62% 45%,#3A3F44 0,#24282C 50%,#16191C 100%)}
+.pin canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.say{position:absolute;left:clamp(16px,4vw,56px);right:clamp(16px,4vw,56px);bottom:clamp(92px,12vh,120px);pointer-events:none}
+.say h1,.say h2{margin:0;font-weight:800;font-stretch:125%;line-height:.96;letter-spacing:-.015em;font-size:clamp(46px,9.4vw,150px);color:#F1F7F8;transition:opacity .18s,transform .3s cubic-bezier(.2,.8,.2,1);position:absolute;left:0;right:0;bottom:0;opacity:0;transform:translateY(24px)}
+.say .on{opacity:1;transform:none}
+.say p{position:absolute;bottom:clamp(64px,11.5vw,180px);left:0;margin:0;font-size:clamp(16px,1.5vw,20px);max-width:34em;color:var(--steel)}
+.say .sub{transition:opacity .3s}
+.progress{position:absolute;right:clamp(16px,3vw,40px);top:50%;transform:translateY(-50%);width:2px;height:140px;background:#ffffff2e}.progress i{display:block;width:100%;height:0;background:var(--chip)}
+@media(max-width:700px){.progress{display:none}}
+section{padding:clamp(72px,10vw,150px) clamp(16px,4vw,56px)}
+.park{background:var(--deep)}
+.park h2,.ways h2,.end h2{font-weight:800;font-stretch:125%;font-size:clamp(36px,5.6vw,84px);line-height:1;letter-spacing:-.01em;margin:0 0 clamp(32px,5vw,64px);color:#F1F7F8;max-width:16ch}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:20px;border-top:1px solid #ffffff26;padding:clamp(14px,1.6vw,24px) 0;font-stretch:75%;font-weight:600;font-size:clamp(34px,7.2vw,112px);line-height:1;transition:font-stretch .45s cubic-bezier(.2,.8,.2,1),color .3s;position:relative}
+.row:last-child{border-bottom:1px solid #ffffff26}
+.row b{font-weight:800;color:var(--chip);font-stretch:100%}
+.row:hover{font-stretch:125%;color:#fff}
+.row small{display:block;font-size:17px;font-weight:400;font-stretch:100%;color:var(--mist);line-height:1.4;margin-top:8px}
+@media(prefers-reduced-motion:reduce){.row{transition:none}}
+.ways{background:var(--steel);color:#16191C}.ways h2{color:#16191C}
+.wg{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.w{position:relative;overflow:hidden;border-radius:6px;background:#23272B;color:#ECEEEF;min-height:clamp(300px,34vw,500px);padding:clamp(18px,2vw,30px);display:flex;flex-direction:column;justify-content:flex-end}
+.w h3{font-size:clamp(26px,3vw,44px);font-weight:750;font-stretch:112%;line-height:1.02;margin:0 0 8px;position:relative;z-index:1}.w p{margin:0;max-width:30em;position:relative;z-index:1}
+.w img{position:absolute;right:-8%;top:-10%;width:72%;max-width:520px;height:auto}
+.w.a{grid-column:span 7}.w.b{grid-column:span 5;background:#34393E}.w.c{grid-column:span 5;background:#4A4F54;color:#fff}.w.d{grid-column:span 7;background:#16191C}
+@media(max-width:800px){.w.a,.w.b,.w.c,.w.d{grid-column:span 12}}
+.sectors{padding:clamp(40px,5vw,70px) clamp(16px,4vw,56px);background:#16191C;color:#fff;border-top:1px solid #ffffff26}
+.sectors p{margin:0;font-weight:600;font-stretch:88%;font-size:clamp(26px,3.6vw,54px);line-height:1.15;max-width:26em}
+.end{background:var(--petrol)}.endg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,80px)}
+.end label{display:block;font-size:15px;margin:0 0 6px}.end input,.end textarea{width:100%;font:inherit;color:#fff;background:#ffffff14;border:1px solid #ffffff55;border-radius:6px;padding:13px;min-height:48px}
+.fg{display:grid;gap:14px}.up{border:1.5px dashed #ffffff77;border-radius:6px;padding:22px;text-align:center;background:none;color:inherit;font:inherit;font-weight:600;cursor:pointer;min-height:64px}
+.send{background:#fff;color:#16191C;border:0;border-radius:999px;padding:16px 24px;font:inherit;font-weight:700;cursor:pointer}
+.tel{font-weight:800;font-stretch:125%;font-size:clamp(30px,4.4vw,60px);text-decoration:none;color:var(--chip);display:block;margin:0 0 14px;line-height:1}
+footer{padding:28px clamp(16px,4vw,56px) 90px;background:var(--deep);font-size:15px;color:var(--mist);display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:space-between}
+</style></head><body>
+<header><a class="logo" href="#top">GENA</a><nav aria-label="Principale"><a href="#parc">Le parc</a><a href="#faire">Ce que nous faisons</a><a href="#">L'entreprise</a><a href="#">Recrutement</a></nav>
+<div class="lang"><a href="#" aria-current="true" onclick="return false">FR</a><a href="#" data-lang="néerlandais">NL</a><a href="#" data-lang="anglais">EN</a></div><a class="quote" href="#devis">Demander un devis</a></header>
+<main id="top">
+<div class="scene" id="scene"><div class="pin"><canvas id="c" aria-label="Animation : une barre d'acier est usinée au tour jusqu'à devenir une pièce finie" role="img"></canvas>
+<div class="say" id="say">
+<p class="sub" id="sub">Faites défiler pour usiner la pièce.</p>
+<h1 class="on">Une barre brute.</h1><h2>Votre plan.</h2><h2>Votre pièce.</h2></div>
+<div class="progress" aria-hidden="true"><i id="pg"></i></div></div></div>
+
+<section class="park" id="parc"><h2>Notre atelier à Nivelles</h2>
+<div class="row"><span>Fraiseuses CNC<small>Pièces prismatiques, programmées sous Mastercam 3D</small></span><b>6</b></div>
+<div class="row"><span>Tours CNC<small>De la pièce unique à la série</small></span><b>5</b></div>
+<div class="row"><span>Scies de débitage</span><b>2</b></div>
+<div class="row"><span>Rectifieuse, honeuse, microbilleuse<small>Pour la finition des surfaces</small></span><b>3</b></div>
+<div class="row"><span>Mètres carrés d'atelier</span><b>630</b></div></section>
+
+<section class="ways" id="faire"><h2>Depuis 1979, quatre façons de vous aider.</h2><div class="wg">
+<article class="w a"><img src="assets/shaft.webp" alt="" loading="lazy"><h3>Pièces sur plan</h3><p>Acier, aluminium, laiton et polyamides, du prototype à la série.</p></article>
+<article class="w b"><img src="assets/gear.webp" alt="" loading="lazy"><h3>Machine en panne</h3><p>Reprise, mesure, dessin et usinage de vos pièces de rechange.</p></article>
+<article class="w c"><img src="assets/flange.webp" alt="" loading="lazy"><h3>Machines sur mesure</h3><p>Conception de nouveaux équipements selon votre cahier des charges.</p></article>
+<article class="w d"><img src="assets/roller.webp" alt="" loading="lazy"><h3>Rectification et finition</h3><p>Un soin particulier apporté à l'état de surface de chaque pièce.</p></article>
+</div></section>
+
+<div class="sectors"><p>Pour le verre, le médical et le pharmaceutique, le naval, l'alimentaire et la domotique.</p></div>
+
+<section class="end" id="devis"><div class="endg"><div><h2>Envoyez-nous votre plan.</h2><a class="tel" href="tel:+3267840240">067 84 02 40</a><p>Rue de la Maîtrise 1, 1400 Nivelles<br>Étude de faisabilité, puis devis gratuit avec le prix et le délai.</p></div>
+<form class="fg" data-demo><div><label for="n">Nom et société</label><input id="n"></div><div><label for="m">E-mail</label><input id="m" type="email"></div><button type="button" class="up" onclick="demoToast('Ici, le client joindra son plan ou une photo.')">Joindre un plan ou une photo</button><div><label for="d">Votre demande</label><textarea id="d" rows="4"></textarea></div><button class="send">Envoyer ma demande</button></form></div></section>
+</main>
+<footer><span>GENA, Rue de la Maîtrise 1, 1400 Nivelles</span><span>Lun. à jeu. 7h30-12h et 13h-16h, ven. 7h30-12h et 13h-14h</span><span>Mentions légales, confidentialité, cookies</span></footer>
+<script src="assets/engine.js"></script><script src="assets/shared.js"></script>
+<script>
+const {createStage,materials,radiusAt,shaftProfile,THREE,reduced,webgl,fit}=GENA3D;
+const scene_=document.getElementById('scene'),heads=[...document.querySelectorAll('#say h1,#say h2')],sub=document.getElementById('sub'),pg=document.getElementById('pg');
+const canvas=document.getElementById('c');
+if(webgl()){
+const stage=createStage(canvas,{fov:24,exposure:1.15,env:{base:0x2b2e31,tint:0xfff4e6}});
+const {scene,camera}=stage;
+const NX=240,NA=56,R=1.12,L0=-3.2,L1=3.2;
+const pos=new Float32Array((NX+2)*(NA+1)*3),uv=new Float32Array((NX+2)*(NA+1)*2),idx=[];
+for(let i=0;i<NX+1;i++)for(let j=0;j<NA;j++){const a=i*(NA+1)+j,b=a+1,c=a+NA+1,d=c+1;idx.push(a,c,b,b,c,d);}
+const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.BufferAttribute(pos,3));geo.setAttribute('uv',new THREE.BufferAttribute(uv,2));geo.setIndex(idx);
+for(let i=0;i<NX+2;i++)for(let j=0;j<=NA;j++){const k=i*(NA+1)+j;uv[2*k]=j/NA*2;uv[2*k+1]=i/(NX+1)*2;}
+const turned=materials.turned({color:0xdfe4e6,roughness:.55});
+const part=new THREE.Mesh(geo,turned);scene.add(part);
+function shape(toolX){
+  for(let i=0;i<NX+2;i++){
+    const t=(i-1)/(NX-1);let x=L0+(L1-L0)*Math.max(0,Math.min(1,t));
+    let r=i===0||i===NX+1?0.001:(x>toolX?radiusAt(x):R);
+    for(let j=0;j<=NA;j++){const a=j/NA*Math.PI*2,k=(i*(NA+1)+j)*3;pos[k]=x;pos[k+1]=r*Math.cos(a);pos[k+2]=r*Math.sin(a);}
+  }
+  geo.attributes.position.needsUpdate=true;geo.computeVertexNormals();
+}
+// Mandrin
+const chuck=new THREE.Group();
+const body=new THREE.Mesh(new THREE.CylinderGeometry(2.3,2.3,1.5,96),materials.dark());body.rotation.z=Math.PI/2;body.position.x=-4.35;chuck.add(body);
+const face=new THREE.Mesh(new THREE.CylinderGeometry(2.0,2.3,.12,96),materials.steel({roughness:.5,color:0x8d979c}));face.rotation.z=Math.PI/2;face.position.x=-3.56;chuck.add(face);
+for(let i=0;i<3;i++){const a=i*Math.PI*2/3,j=new THREE.Mesh(new THREE.BoxGeometry(.75,.78,.62),materials.steel({color:0xa4aeb3,roughness:.4}));j.position.set(-3.25,1.5*Math.cos(a),1.5*Math.sin(a));j.rotation.x=-a;chuck.add(j);}
+scene.add(chuck);
+// Outil
+const tool=new THREE.Group();
+const shank=new THREE.Mesh(new THREE.BoxGeometry(.7,3.4,.55),materials.dark({color:0x394046}));shank.position.y=1.95;tool.add(shank);
+const insert=new THREE.Mesh(new THREE.CylinderGeometry(.03,.3,.22,3),new THREE.MeshPhysicalMaterial({color:0xE0A419,metalness:1,roughness:.3}));insert.position.y=.11;tool.add(insert);
+scene.add(tool);
+// Copeaux
+const N=420,cp=new Float32Array(N*3),cv=new Float32Array(N*3),cl=new Float32Array(N);
+const pg_=new THREE.BufferGeometry();pg_.setAttribute('position',new THREE.BufferAttribute(cp,3));
+const pts=new THREE.Points(pg_,new THREE.PointsMaterial({color:0xD99A60,size:.055,transparent:true,opacity:.95,blending:THREE.AdditiveBlending,depthWrite:false}));pts.frustumCulled=false;scene.add(pts);
+for(let i=0;i<N;i++){cl[i]=0;cp[3*i+1]=-99;}
+let ci=0;function spawn(x,y){for(let n=0;n<4;n++){const i=ci++%N;cp[3*i]=x;cp[3*i+1]=y;cp[3*i+2]=.05;const a=Math.random()*1.5+.3;cv[3*i]=(.8+Math.random()*2.6);cv[3*i+1]=Math.sin(a)*(2+Math.random()*3);cv[3*i+2]=Math.random()*5-2;cl[i]=.5+Math.random()*.7;}}
+let target=0,p=0,last=performance.now(),spin=0,prevTool=null,prevShown=-1;
+const place=()=>{const portrait=stage.w<stage.h;const d=fit(camera,portrait?5.0:5.0,{margin:portrait?1.02:1.06});
+camera.position.set(1.4,1.7+p*.5,d);camera.lookAt(portrait?-.5:-.5,portrait?-.1:-.65,0);};
+function onScroll(){const r=scene_.getBoundingClientRect();document.querySelector('header').classList.toggle('solid',r.bottom<80);target=Math.max(0,Math.min(1,-r.top/(r.height-innerHeight)));}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+if(reduced()){target=1;p=1;}
+function frame(now){
+  if(scene_.getBoundingClientRect().bottom<0||scene_.getBoundingClientRect().top>innerHeight){last=now;requestAnimationFrame(frame);return;}
+  const dt=Math.min((now-last)/1000,.05);last=now;
+  p+=(target-p)*(reduced()?1:Math.min(1,dt*7));
+  const cut=Math.max(0,Math.min(1,(p-.12)/.72));
+  const tx=L1+.1-(L1-L0+.1)*cut;
+  if(tx!==prevTool){shape(tx);}
+  const tr=Math.min(radiusAt(Math.max(tx,L0)),R);
+  tool.position.set(tx,tr+.01,0);tool.visible=cut<.995;tool.position.y+=cut>.97?(cut-.97)*80:0;
+  const speed=prevTool===null?0:Math.abs(tx-prevTool)/Math.max(dt,.001);
+  if(speed>.05&&cut>0&&cut<1&&!reduced())spawn(tx,tr+.05);
+  prevTool=tx;
+  spin+=dt*(cut>0&&cut<1?7:1.1);part.rotation.x=spin;chuck.rotation.x=spin;
+  for(let i=0;i<N;i++){if(cl[i]>0){cl[i]-=dt;cv[3*i+1]-=dt*9;cp[3*i]+=cv[3*i]*dt;cp[3*i+1]+=cv[3*i+1]*dt;cp[3*i+2]+=cv[3*i+2]*dt;}else cp[3*i+1]=-99;}
+  pg_.attributes.position.needsUpdate=true;
+  place();stage.render();
+  const s=p<.12?0:p<.82?1:2;
+  if(s!==prevShown){heads.forEach((h,i)=>h.classList.toggle('on',i===s));sub.style.opacity=s===0?1:0;prevShown=s;}
+  pg.style.height=(p*100)+'%';
+  requestAnimationFrame(frame);
+}
+shape(L1+.1);requestAnimationFrame(frame);
+}else{heads.forEach((h,i)=>h.classList.toggle('on',i===2));scene_.style.height='100vh';canvas.style.display='none';}
+</script></body></html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Maquette GENA · Vitrine</title>
+<style>
+@font-face{font-family:"Funnel Display";src:url(assets/fonts/funnel-display-latin-wght-normal.woff2) format("woff2");font-weight:300 800;font-display:swap}
+@font-face{font-family:"Funnel Sans";src:url(assets/fonts/funnel-sans-latin-wght-normal.woff2) format("woff2");font-weight:300 800;font-display:swap}
+:root{--hue:#1B2BE8;--on:#fff;--ink:#0C1020;--alu:#ECEEF1}
+*{box-sizing:border-box}body{margin:0;background:var(--alu);color:var(--ink);font:400 18px/1.5 "Funnel Sans",system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+header{position:absolute;z-index:10;top:0;left:0;right:0;display:flex;align-items:center;gap:26px;padding:20px clamp(16px,3vw,44px);color:var(--on);transition:color .5s}
+.logo{font:700 28px "Funnel Display",sans-serif;text-decoration:none}
+header nav{display:flex;gap:24px;margin-left:auto}header nav a{text-decoration:none}header nav a:hover{text-decoration:underline}
+.lang{display:flex;gap:4px;font-size:15px}.lang a{text-decoration:none;padding:6px}.lang a[aria-current]{font-weight:700;text-decoration:underline}
+@media(max-width:860px){header nav{display:none}.lang{margin-left:auto}}
+.hero{position:relative;height:100vh;height:100svh;min-height:640px;background:var(--hue);color:var(--on);overflow:hidden;transition:background-color .6s ease,color .5s}
+.word{position:absolute;left:0;right:0;top:clamp(84px,13vh,130px);text-align:center;margin:0;font:800 clamp(72px,19.5vw,330px)/.9 "Funnel Display",sans-serif;letter-spacing:-.035em;white-space:nowrap;user-select:none}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab;touch-action:pan-y}.hero canvas:active{cursor:grabbing}
+.foot{position:absolute;left:clamp(16px,3vw,44px);right:clamp(16px,3vw,44px);bottom:clamp(76px,9vh,92px);display:flex;flex-wrap:wrap;gap:16px 40px;align-items:end;justify-content:space-between;pointer-events:none}
+.foot>*{pointer-events:auto}.desc{max-width:27em;margin:0;font-size:clamp(17px,1.5vw,21px);line-height:1.35}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}.tabs button{font:600 16px "Funnel Sans",sans-serif;color:inherit;background:transparent;border:1.5px solid currentColor;border-radius:999px;padding:11px 18px;cursor:pointer;min-height:44px}
+.tabs button[aria-pressed=true]{background:var(--on);color:var(--hue)}
+.hint{position:absolute;right:clamp(16px,3vw,44px);top:84px;margin:0;font-size:15px;opacity:.9}
+@media(max-width:700px){.hint{display:none}.tabs button{padding:9px 13px;font-size:15px}}
+section{padding:clamp(72px,9vw,140px) clamp(16px,3vw,44px)}
+h2{font:700 clamp(38px,6vw,92px)/1 "Funnel Display",sans-serif;letter-spacing:-.02em;margin:0 0 clamp(28px,4vw,56px);max-width:15ch}
+.mosaic{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:minmax(130px,14vw);gap:12px}
+.t{border-radius:28px;padding:clamp(18px,2vw,30px);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.t h3{font:700 clamp(24px,2.7vw,42px)/1.02 "Funnel Display",sans-serif;margin:0;position:relative}.t p{margin:6px 0 0;position:relative}
+.t img{position:absolute;width:88%;right:-12%;top:-14%}
+.num{font:800 clamp(60px,9vw,150px)/.9 "Funnel Display",sans-serif;letter-spacing:-.03em}
+.t1{grid-column:1/8;grid-row:span 3;background:#fff}.t1 img{width:66%;right:-3%;top:-6%}
+.t2{grid-column:8/13;grid-row:span 2;background:#5A1FD1;color:#fff}.t3{grid-column:8/11;grid-row:span 1;background:#FFC400}.t4{grid-column:11/13;grid-row:span 1;background:#E8173F;color:#fff}
+.t5{grid-column:1/5;grid-row:span 2;background:#101426;color:#fff}.t6{grid-column:5/13;grid-row:span 2;background:#1B2BE8;color:#fff}.t6 img{width:46%;right:2%;top:-20%}
+@media(max-width:800px){.mosaic{grid-auto-rows:auto}.t{min-height:190px}.t1,.t2,.t3,.t4,.t5,.t6{grid-column:span 12;grid-row:auto}.t3,.t4{grid-column:span 6}.t1{min-height:380px}.t1 img{width:80%}.t6{min-height:320px}.t6 img{width:66%;right:-6%;top:-12%}.t2 img{width:64%}}
+.sec{background:#101426;color:#fff}.sl{list-style:none;margin:0;padding:0}.sl li{font:600 clamp(38px,7vw,110px)/1.08 "Funnel Display",sans-serif;letter-spacing:-.02em;border-top:1px solid #ffffff30;padding:.12em 0;transition:color .25s,padding-left .3s}.sl li:hover{padding-left:.3em;color:var(--c)}
+.go{background:var(--hue);color:var(--on);transition:background-color .6s}.gog{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,80px)}
+.go label{display:block;font-size:15px;margin-bottom:6px}.go input,.go textarea{width:100%;background:transparent;color:inherit;font:inherit;border:0;border-bottom:2px solid currentColor;padding:12px 2px;border-radius:0;min-height:48px}.go input:focus,.go textarea:focus{outline:none;border-bottom-width:4px}
+.fg{display:grid;gap:18px}.up,.send{font:600 17px "Funnel Sans",sans-serif;border-radius:999px;padding:16px 24px;cursor:pointer;min-height:54px}.up{background:transparent;color:inherit;border:2px dashed currentColor}.send{background:var(--on);color:var(--hue);border:0}
+footer{background:#101426;color:#C8CDDA;padding:30px clamp(16px,3vw,44px) 92px;display:flex;flex-wrap:wrap;gap:10px 40px;justify-content:space-between;font-size:15px}
+</style></head><body>
+<header><a class="logo" href="#">GENA</a><nav aria-label="Principale"><a href="#capa">Capacités</a><a href="#secteurs">Secteurs</a><a href="#">L'entreprise</a><a href="#">Recrutement</a><a href="#devis">Devis</a></nav><div class="lang"><a href="#" aria-current="true" onclick="return false">FR</a><a href="#" data-lang="néerlandais">NL</a><a href="#" data-lang="anglais">EN</a></div></header>
+<main>
+<div class="hero" id="hero"><h1 class="word" id="word">Fraisage</h1><canvas id="c" role="img" aria-label="Pièce usinée en 3D, à faire tourner avec la souris ou le doigt"></canvas>
+<p class="hint">Faites tourner la pièce</p>
+<div class="foot"><p class="desc" id="desc"></p><div class="tabs" id="tabs" role="group" aria-label="Choisir un savoir-faire"></div></div></div>
+<section id="capa"><h2>Un atelier, toutes les étapes de la pièce.</h2><div class="mosaic">
+<article class="t t1"><img src="assets/block.webp" alt="" loading="lazy"><div class="num">630 m²</div><h3>d'atelier à Nivelles, depuis 1979</h3><p>Une entreprise familiale, à environ 30 km de Mons, Charleroi et Namur.</p></article>
+<article class="t t2"><div class="num">6 + 5</div><h3>fraiseuses et tours CNC</h3><p>Programmés sous Mastercam 3D.</p></article>
+<article class="t t3"><h3>Acier, aluminium, laiton</h3></article>
+<article class="t t4"><h3>Polyamides</h3></article>
+<article class="t t5"><h3>Prototype, petite ou grande série</h3><p>Le même suivi, du devis à la livraison.</p></article>
+<article class="t t6"><img src="assets/flange.webp" alt="" loading="lazy"><h3>Rectification, honage, microbillage</h3><p>La finition se fait aussi à l'atelier.</p></article>
+</div></section>
+<section class="sec" id="secteurs"><h2>Nos pièces partent vers</h2><ul class="sl">
+<li style="--c:#7E9BFF">Le verre</li><li style="--c:#FF6A83">Le médical et le pharma</li><li style="--c:#FFC400">Le naval</li><li style="--c:#B79BFF">L'alimentaire</li><li style="--c:#7E9BFF">La domotique</li></ul></section>
+<section class="go" id="devis"><div class="gog"><div><h2>Parlons de votre pièce.</h2><p>Envoyez un plan ou une photo : nous étudions la faisabilité et vous répondons avec un devis gratuit.</p><p><a href="tel:+3267840240">067 84 02 40</a><br>Rue de la Maîtrise 1, 1400 Nivelles</p></div>
+<form class="fg" data-demo><div><label for="n">Nom et société</label><input id="n"></div><div><label for="m">E-mail</label><input id="m" type="email"></div><div><label for="d">Votre demande</label><textarea id="d" rows="3"></textarea></div><button type="button" class="up" onclick="demoToast('Ici, le client joindra son plan ou une photo.')">Joindre un plan ou une photo</button><button class="send">Envoyer ma demande</button></form></div></section>
+</main>
+<footer><span>Lun. à jeu. 7h30-12h et 13h-16h, ven. 7h30-12h et 13h-14h</span><span>Mentions légales, confidentialité, cookies</span></footer>
+<script src="assets/engine.js"></script><script src="assets/shared.js"></script>
+<script>
+const {createStage,parts,materials,prep,THREE,reduced,webgl,fit}=GENA3D;
+const items=[
+ {w:'Fraisage',bg:'#1B2BE8',on:'#FFFFFF',metal:0xC6D6FF,g:()=>parts.block(),r:3.2,d:'Pièces prismatiques réalisées sur 6 fraiseuses à commande numérique, selon votre cahier des charges.',rot:[-.8,.35,.25]},
+ {w:'Tournage',bg:'#E8173F',on:'#FFFFFF',metal:0xFFC4CB,g:()=>parts.shaft(),r:3.5,d:'Une pièce originale ou une série, sur 5 tours à commande numérique.',rot:[.4,-.5,.2]},
+ {w:'Finition',bg:'#FFC400',on:'#0C1020',metal:0xF7EFD8,g:()=>parts.roller(),r:3.0,d:'Rectifieuse cylindrique, honeuse et microbilleuse pour un état de surface soigné.',rot:[.35,-.55,.25],pol:true},
+ {w:'Réparation',bg:'#5A1FD1',on:'#FFFFFF',metal:0xE3D4FF,g:()=>parts.gear(),r:2.75,d:'Une machine en panne ? Donnez-nous le plan ou la pièce : nous la mesurons et la refabriquons.',rot:[-.5,.55,.1]}
+];
+const word=document.getElementById('word'),desc=document.getElementById('desc'),tabs=document.getElementById('tabs'),root=document.documentElement,hero=document.getElementById('hero');
+let cur=0;const btns=items.map((it,i)=>{const b=document.createElement('button');b.type='button';b.textContent=it.w;b.onclick=()=>pick(i);tabs.appendChild(b);return b;});
+let stage,meshes=[],group,transition=1,rx=0,ry=0,vx=0,vy=0.0035,drag=false,lx=0,ly=0;
+function paint(i){const it=items[i];root.style.setProperty('--hue',it.bg);root.style.setProperty('--on',it.on);word.textContent=it.w;desc.textContent=it.d;btns.forEach((b,k)=>b.setAttribute('aria-pressed',k===i));}
+function pick(i){if(i===cur)return;cur=i;paint(i);transition=0;if(meshes.length){meshes.forEach((m,k)=>m.visible=k===i);rx=0;ry=0;}}
+paint(0);
+if(webgl()){
+ stage=createStage(document.getElementById('c'),{fov:24,exposure:1.35,env:{base:0x74747c}});
+ group=new THREE.Group();stage.scene.add(group);
+ meshes=items.map((it,i)=>{const mat=it.pol?materials.polished({color:it.metal}):materials.anodised(it.metal);const m=new THREE.Mesh(prep(it.g()),mat);m.visible=i===0;m.rotation.set(...it.rot);group.add(m);return m;});
+ const c=stage.canvas;
+ c.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX;ly=e.clientY;c.setPointerCapture(e.pointerId);});
+ c.addEventListener('pointermove',e=>{if(!drag)return;vy=(e.clientX-lx)*.006;vx=(e.clientY-ly)*.004;lx=e.clientX;ly=e.clientY;ry+=vy;rx+=vx;});
+ c.addEventListener('pointerup',()=>drag=false);c.addEventListener('pointercancel',()=>drag=false);
+ let last=performance.now();
+ (function f(now){
+  if(hero.getBoundingClientRect().bottom<0){last=now;requestAnimationFrame(f);return;}
+  const dt=Math.min((now-last)/1000,.05);last=now;
+  if(!reduced()&&!drag){ry+=vy;rx+=vx;vy+=(0.0035-vy)*.04;vx*=.94;}
+  transition=Math.min(1,transition+dt*1.8);const e=1-Math.pow(1-transition,3);
+  const it=items[cur];const portrait=stage.w<stage.h;
+  group.rotation.set(rx,ry+(1-e)*-2.2,0);group.scale.setScalar(.7+.3*e);
+  stage.camera.position.set(0,portrait?.2:.1,fit(stage.camera,it.r,{margin:portrait?1.2:1.62}));stage.camera.lookAt(0,portrait?.3:.75,0);
+  stage.render();requestAnimationFrame(f);
+ })(last);
+}else{document.getElementById('c').style.display='none';}
+</script></body></html>

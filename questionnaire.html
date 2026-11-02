@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Questionnaire GENA</title>
+<style>
+@font-face{font-family:Schibsted;src:url(assets/fonts/schibsted-grotesk-latin-wght-normal.woff2) format("woff2");font-weight:400 900;font-display:swap}
+:root{--ink:#1B2127;--muted:#56616B;--line:#D5DADF;--bg:#F2F4F5;--card:#fff;--act:#1B2127;--on:#fff;--err:#A32015}
+@media(prefers-color-scheme:dark){:root{--ink:#EEF1F3;--muted:#AEB7BF;--line:#3A4148;--bg:#15181B;--card:#1F2327;--act:#EEF1F3;--on:#15181B;--err:#FF9C90}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 Schibsted,system-ui,sans-serif}a{color:inherit}:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+main{max-width:780px;margin:0 auto;padding:28px 16px 64px}h1{font-size:clamp(30px,5vw,44px);line-height:1.05;letter-spacing:-.02em;margin:0 0 10px;font-weight:800}
+.bar{height:6px;background:var(--line);border-radius:3px;margin:18px 0 6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ink);transition:width .25s}.small{font-size:15px;color:var(--muted)}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:clamp(18px,3vw,30px);margin-top:14px}.step[hidden]{display:none}
+.step h2{font-size:25px;line-height:1.15;margin:0 0 4px}.q{margin-top:24px}.q>label,.q>.t{display:block;font-weight:650;margin-bottom:7px}.help{display:block;font-weight:400;color:var(--muted);font-size:15px;margin-top:2px}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;font:inherit;color:inherit;background:transparent;border:1px solid var(--muted);border-radius:6px;padding:11px;min-height:46px}
+.o{display:flex;gap:10px;align-items:flex-start;padding:7px 0;min-height:40px;font-weight:400}.o input{width:20px;height:20px;margin:3px 0 0;flex:none;accent-color:var(--ink)}
+.sc{display:grid;grid-template-columns:7.5em 1fr 7.5em;gap:10px;align-items:center;font-size:15px;margin:8px 0}.sc input{width:100%;accent-color:var(--ink);min-height:30px}.sc span:last-child{text-align:right}
+.ref{display:grid;grid-template-columns:minmax(0,1fr) 7.5em 7.5em;gap:8px;align-items:center;border-top:1px solid var(--line);padding:8px 0}.ref label{display:flex;gap:6px;align-items:center;font-size:15px}.ref a{word-break:break-word}.ref input{width:18px;height:18px}
+@media(max-width:560px){.ref{grid-template-columns:1fr 1fr}.ref a{grid-column:1/-1}}
+.nav{display:flex;gap:10px;justify-content:space-between;margin-top:18px}button{font:inherit;font-weight:650;border-radius:6px;padding:13px 20px;min-height:46px;cursor:pointer;border:1.5px solid var(--act);background:transparent;color:var(--ink)}button.p{background:var(--act);color:var(--on)}
+#sum{min-height:240px;font-size:15px}.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.acts button{flex:1 1 170px}#err{color:var(--err);font-weight:650;margin:10px 0 0;min-height:1.4em}
+</style></head><body><main>
+<h1>Mieux vous connaître pour réussir votre site</h1>
+<p>Comptez environ 20 minutes, en une ou plusieurs fois : vos réponses restent enregistrées dans ce navigateur. Répondez à ce que vous savez, tout est facultatif</p>
+<p><a href="index.html">Revoir les trois propositions</a></p>
+<div class="bar" aria-hidden="true"><i id="pg"></i></div><div class="small" id="pgt" role="status"></div>
+<form id="f" novalidate>
+
+<section class="step"None><h2>1. Votre avis sur les propositions</h2>
+<div class="q"><span class="t">Quelle proposition vous parle le plus ?</span><label class="o"><input type="radio" name="Proposition préférée" value="1. Héritage">1. Héritage</label><label class="o"><input type="radio" name="Proposition préférée" value="2. Référence">2. Référence</label><label class="o"><input type="radio" name="Proposition préférée" value="3. Atelier">3. Atelier</label><label class="o"><input type="radio" name="Proposition préférée" value="4. Vitrine">4. Vitrine</label><label class="o"><input type="radio" name="Proposition préférée" value="5. Direct">5. Direct</label><label class="o"><input type="radio" name="Proposition préférée" value="6. Le Plan">6. Le Plan</label><label class="o"><input type="radio" name="Proposition préférée" value="7. Industrie">7. Industrie</label><label class="o"><input type="radio" name="Proposition préférée" value="8. La Maison">8. La Maison</label><label class="o"><input type="radio" name="Proposition préférée" value="Un mélange">Un mélange</label><label class="o"><input type="radio" name="Proposition préférée" value="Aucune">Aucune</label></div><div class="q"><label for="a0">Votre deuxième choix</label><input type="text" id="a0" name="Deuxième choix"></div>
+<div class="q"><label for="a1">Que gardez-vous de chacune ?</label><textarea id="a1" name="À garder" rows="3"></textarea></div>
+<div class="q"><label for="a2">Qu'est-ce qui ne vous correspond pas ?</label><textarea id="a2" name="À éviter" rows="3"></textarea></div></section>
+
+<section class="step" hidden><h2>2. Votre entreprise</h2>
+<div class="q"><label for="b1">Si un client hésite entre vous et un concurrent, pourquoi vous choisit-il ?</label><textarea id="b1" name="Pourquoi GENA" rows="3"></textarea></div>
+<div class="q"><label for="b2">Qu'est-ce que vous savez faire et que peu d'ateliers font ?</label><textarea id="b2" name="Spécificité" rows="3"></textarea></div>
+<div class="q"><label for="b3">En quelques phrases, votre histoire depuis 1979<span class="help">Dates clés, générations, déménagements, nouvelles machines</span></label><textarea id="b3" name="Histoire" rows="4"></textarea></div>
+<div class="q"><span class="t">Comment souhaitez-vous être perçus ? (3 choix au maximum)</span>
+<label class="o"><input type="checkbox" name="Image" value="Expérimentés">Expérimentés</label><label class="o"><input type="checkbox" name="Image" value="Précis et rigoureux">Précis et rigoureux</label><label class="o"><input type="checkbox" name="Image" value="Réactifs">Réactifs</label><label class="o"><input type="checkbox" name="Image" value="Familiaux et proches">Familiaux et proches</label><label class="o"><input type="checkbox" name="Image" value="Bien équipés et modernes">Bien équipés et modernes</label><label class="o"><input type="checkbox" name="Image" value="Solides et fiables">Solides et fiables</label></div>
+<div class="q"><label for="b4">Personnes à présenter sur le site</label><textarea id="b4" name="Équipe à présenter" rows="2"></textarea></div></section>
+
+<section class="step" hidden><h2>3. Vos clients et vos objectifs</h2>
+<div class="q"><span class="t">Que doit apporter le site en priorité ?</span>
+<label class="o"><input type="checkbox" name="Objectifs" value="Nouvelles demandes de devis">Plus de demandes de devis</label><label class="o"><input type="checkbox" name="Objectifs" value="Dépannages urgents">Des dépannages et réparations urgents</label><label class="o"><input type="checkbox" name="Objectifs" value="Crédibilité auprès des acheteurs">De la crédibilité auprès des acheteurs</label><label class="o"><input type="checkbox" name="Objectifs" value="Recrutement">Du recrutement</label><label class="o"><input type="checkbox" name="Objectifs" value="Clients à l'étranger">Des clients à l'étranger</label></div>
+<div class="q"><label for="c1">Qui vous contacte d'habitude ?<span class="help">Acheteur, responsable maintenance, bureau d'études, dirigeant…</span></label><input type="text" id="c1" name="Interlocuteurs"></div>
+<div class="q"><label for="c2">Quel est votre client idéal ?</label><textarea id="c2" name="Client idéal" rows="2"></textarea></div>
+<div class="q"><label for="c3">Quels travaux voulez-vous développer, et lesquels moins ?</label><textarea id="c3" name="Travaux à développer ou limiter" rows="3"></textarea></div>
+<div class="q"><span class="t">Secteurs à mettre en avant</span><label class="o"><input type="checkbox" name="Secteurs" value="Verrier">Verrier</label><label class="o"><input type="checkbox" name="Secteurs" value="Médical et pharmaceutique">Médical et pharmaceutique</label><label class="o"><input type="checkbox" name="Secteurs" value="Naval">Naval</label><label class="o"><input type="checkbox" name="Secteurs" value="Alimentaire">Alimentaire</label><label class="o"><input type="checkbox" name="Secteurs" value="Domotique">Domotique</label><label class="o"><input type="checkbox" name="Secteurs" value="Automobile">Automobile</label></div>
+<div class="q"><label for="c4">Autres secteurs, et zone géographique visée</label><input type="text" id="c4" name="Autres secteurs et zone"></div>
+<div class="q"><label for="c5">Vos principaux concurrents</label><input type="text" id="c5" name="Concurrents"></div></section>
+
+<section class="step" hidden><h2>4. Votre style</h2>
+<p class="small">Placez chaque curseur là où vous vous sentez le mieux.</p>
+<div class="q"><div class="sc"><span>Très sobre</span><input type="range" name="Sobre / expressif" min="1" max="5" value="2" aria-label="De très sobre à expressif"><span>Expressif</span></div>
+<div class="sc"><span>Classique</span><input type="range" name="Classique / moderne" min="1" max="5" value="3" aria-label="De classique à moderne"><span>Moderne</span></div>
+<div class="sc"><span>Humain</span><input type="range" name="Humain / technique" min="1" max="5" value="3" aria-label="De humain à technique"><span>Technique</span></div>
+<div class="sc"><span>Page claire</span><input type="range" name="Clair / sombre" min="1" max="5" value="2" aria-label="De clair à sombre"><span>Page sombre</span></div>
+<div class="sc"><span>Peu de texte</span><input type="range" name="Peu / beaucoup de texte" min="1" max="5" value="3" aria-label="De peu à beaucoup de texte"><span>Très détaillé</span></div></div>
+<div class="q"><span class="t">Ces sites vous inspirent-ils ?</span>
+<div class="ref"><a href="https://www.protolabs.com/fr-fr/" target="_blank" rel="noopener">protolabs.com</a><label><input type="checkbox" name="Sites aimés" value="Protolabs">J'aime</label><label><input type="checkbox" name="Sites pas aimés" value="Protolabs">Pas pour nous</label></div>
+<div class="ref"><a href="https://www.dmpi.be/" target="_blank" rel="noopener">dmpi.be</a><label><input type="checkbox" name="Sites aimés" value="DMPI">J'aime</label><label><input type="checkbox" name="Sites pas aimés" value="DMPI">Pas pour nous</label></div>
+<div class="ref"><a href="https://www.machining.com/" target="_blank" rel="noopener">machining.com</a><label><input type="checkbox" name="Sites aimés" value="United Machining">J'aime</label><label><input type="checkbox" name="Sites pas aimés" value="United Machining">Pas pour nous</label></div>
+<div class="ref"><a href="https://jlccnc.com/" target="_blank" rel="noopener">jlccnc.com</a><label><input type="checkbox" name="Sites aimés" value="JLCCNC">J'aime</label><label><input type="checkbox" name="Sites pas aimés" value="JLCCNC">Pas pour nous</label></div></div>
+<div class="q"><label for="d1">D'autres sites que vous aimez, ou à éviter, et pourquoi ?</label><textarea id="d1" name="Autres sites" rows="3"></textarea></div>
+<div class="q"><label for="d2">Couleurs à garder ou à éviter</label><input type="text" id="d2" name="Couleurs"></div>
+<div class="q"><span class="t">Votre logo</span><label class="o"><input type="radio" name="Logo" value="Inchangé, fichier d'origine disponible">Il reste tel quel, et nous avons le fichier d'origine (AI, EPS, SVG, PDF)</label><label class="o"><input type="radio" name="Logo" value="Inchangé, pas de fichier d'origine">Il reste tel quel, mais nous n'avons pas le fichier d'origine</label><label class="o"><input type="radio" name="Logo" value="À rafraîchir">Nous aimerions le rafraîchir </label></div>
+<div class="q"><span class="t">Que voulez-vous voir en premier sur le site ?</span><label class="o"><input type="radio" name="Premier écran" value="L'atelier et les machines">L'atelier et les machines</label><label class="o"><input type="radio" name="Premier écran" value="Les pièces réalisées">Les pièces réalisées</label><label class="o"><input type="radio" name="Premier écran" value="L'équipe et l'histoire">L'équipe et l'histoire</label><label class="o"><input type="radio" name="Premier écran" value="La demande de devis">La demande de devis</label></div></section>
+
+<section class="step" hidden><h2>5. Vos capacités techniques</h2>
+<p class="small">Ces chiffres rassurent les acheteurs. Une liste de machines envoyée à part convient aussi.</p>
+<div class="q"><label for="e1">Marques et modèles des machines à citer</label><textarea id="e1" name="Machines" rows="3"></textarea></div>
+<div class="q"><label for="e2">Dimensions maximales en fraisage et en tournage</label><input type="text" id="e2" name="Dimensions max"></div>
+<div class="q"><label for="e3">Tolérances et états de surface atteints</label><input type="text" id="e3" name="Tolérances"></div>
+<div class="q"><label for="e4">Séries : quantités habituelles et maximales<span class="help">Votre site mentionne à la fois de petites séries et plusieurs millions d'unités</span></label><input type="text" id="e4" name="Séries"></div>
+<div class="q"><label for="e5">Matières travaillées</label><input type="text" id="e5" name="Matières"></div>
+<div class="q"><label for="e6">Certifications et moyens de contrôle<span class="help">ISO 9001, machine à mesurer, certificats matière…</span></label><input type="text" id="e6" name="Certifications et contrôle"></div>
+<div class="q"><label for="e7">Traitements réalisés par vous ou sous-traités</label><input type="text" id="e7" name="Traitements"></div>
+<div class="q"><label for="e8">Délais habituels et capacité à gérer l'urgence</label><input type="text" id="e8" name="Délais"></div></section>
+
+<section class="step" hidden><h2>6. Textes, photos et vidéos</h2>
+<div class="q"><span class="t">Peut-on montrer des pièces réalisées pour vos clients ?</span><label class="o"><input type="radio" name="Pièces clients" value="Oui">Oui</label><label class="o"><input type="radio" name="Pièces clients" value="Après accord">Oui, après accord du client</label><label class="o"><input type="radio" name="Pièces clients" value="Non">Non, seulement des pièces génériques</label></div>
+<div class="q"><label for="f1">Réalisations à présenter, ou noms de clients à citer</label><textarea id="f1" name="Réalisations et références" rows="3"></textarea></div>
+<div class="q"><label for="f2">Lien du dossier partagé<span class="help">Google Drive, OneDrive ou WeTransfer : textes en français, logo, photos et vidéos</span></label><input type="text" id="f2" name="Dossier partagé"></div>
+<div class="q"><label for="f3">Date à laquelle ces éléments seront prêts</label><input type="text" id="f3" name="Date des contenus"></div>
+<div class="q"><span class="t">Où en sont vos textes en français ?</span><label class="o"><input type="radio" name="Textes français" value="Prêts">Prêts et validés</label><label class="o"><input type="radio" name="Textes français" value="En cours">En cours</label><label class="o"><input type="radio" name="Textes français" value="À commencer">À commencer</label></div>
+<div class="q"><span class="t">Vos vidéos</span><label class="o"><input type="radio" name="Vidéos" value="Disponibles">Elles sont prêtes</label><label class="o"><input type="radio" name="Vidéos" value="À tourner">Elles restent à tourner</label><label class="o"><input type="radio" name="Vidéos" value="Pas de vidéo">Pas de vidéo</label></div>
+
+<div class="q"><label for="f5">Termes techniques à traduire d'une façon précise<span class="help">Vos propres mots en néerlandais et en anglais, s'ils existent déjà</span></label><textarea id="f5" name="Glossaire" rows="3"></textarea></div>
+<div class="q"><span class="t">Rubriques à prévoir</span><label class="o"><input type="checkbox" name="Rubriques" value="Actualités">Actualités</label><label class="o"><input type="checkbox" name="Rubriques" value="Offres d'emploi">Offres d'emploi</label><label class="o"><input type="checkbox" name="Rubriques" value="Vidéo de l'atelier">Vidéo de l'atelier</label><label class="o"><input type="checkbox" name="Rubriques" value="Fiches des machines">Fiches des machines</label><label class="o"><input type="checkbox" name="Rubriques" value="Réalisations">Réalisations</label></div></section>
+
+<section class="step" hidden><h2>7. Pages du site</h2>
+<div class="q"><span class="t">Quelles pages voulez-vous ?</span><label class="o"><input type="checkbox" name="Pages" value="Accueil">Accueil</label><label class="o"><input type="checkbox" name="Pages" value="Histoire et équipe">Histoire et équipe</label><label class="o"><input type="checkbox" name="Pages" value="Fraisage">Fraisage</label><label class="o"><input type="checkbox" name="Pages" value="Tournage">Tournage</label><label class="o"><input type="checkbox" name="Pages" value="Rectification et finition">Rectification et finition</label><label class="o"><input type="checkbox" name="Pages" value="Réparation et maintenance">Réparation et maintenance</label><label class="o"><input type="checkbox" name="Pages" value="Conception de machines">Conception de machines</label><label class="o"><input type="checkbox" name="Pages" value="Parc machines">Parc machines</label><label class="o"><input type="checkbox" name="Pages" value="Secteurs">Secteurs</label><label class="o"><input type="checkbox" name="Pages" value="Réalisations">Réalisations</label><label class="o"><input type="checkbox" name="Pages" value="Recrutement">Recrutement</label><label class="o"><input type="checkbox" name="Pages" value="Actualités">Actualités</label><label class="o"><input type="checkbox" name="Pages" value="Demande de devis">Demande de devis par vos Clients</label><label class="o"><input type="checkbox" name="Pages" value="Contact et accès">Contact et accès</label></div>
+<div class="q"><label for="k1">Autres pages, ou pages de l'ancien site à supprimer</label><textarea id="k1" name="Autres pages" rows="2"></textarea></div>
+<div class="q"><label for="k2">Après l'accueil, quelle page compte le plus ?</label><input type="text" id="k2" name="Page prioritaire"></div>
+<div class="q"><label for="k3">Quels contenus modifierez-vous vous-mêmes, et à quelle fréquence ?</label><textarea id="k3" name="Contenus à modifier" rows="2"></textarea></div>
+<div class="q"><label for="k4">Qui suivra la formation et gérera le site ?</label><input type="text" id="k4" name="Gestionnaire du site"></div>
+<div class="q"><span class="t">Cette personne connaît-elle WordPress ?</span><label class="o"><input type="radio" name="Niveau WordPress" value="Oui">Oui</label><label class="o"><input type="radio" name="Niveau WordPress" value="Un peu">Un peu</label><label class="o"><input type="radio" name="Niveau WordPress" value="Non">Non</label></div></section>
+
+<section class="step" hidden><h2>8. Demandes de devis</h2>
+<div class="q"><span class="t">Fichiers acceptés</span><label class="o"><input type="checkbox" name="Fichiers" value="PDF">PDF</label><label class="o"><input type="checkbox" name="Fichiers" value="DXF, DWG">DXF, DWG</label><label class="o"><input type="checkbox" name="Fichiers" value="STEP, IGES">STEP, IGES</label><label class="o"><input type="checkbox" name="Fichiers" value="Photos">Photos</label></div>
+<div class="q"><label for="g1">Informations indispensables pour établir un devis<span class="help">Quantité, matière, délai, traitement…</span></label><input type="text" id="g1" name="Informations devis"></div>
+<div class="q"><label for="g2">Adresse e-mail qui reçoit les demandes</label><input type="email" id="g2" name="E-mail des demandes"></div>
+<div class="q"><label for="g3">Plans clients : exigences de confidentialité</label><input type="text" id="g3" name="Confidentialité"></div>
+<div class="q"><label for="g4">Autres adresses de réception<span class="help">Par exemple pour les candidatures ou les urgences</span></label><input type="text" id="g4" name="Autres adresses"></div>
+<div class="q"><label for="g5">Taille maximale des fichiers que vous recevez</label><input type="text" id="g5" name="Taille des fichiers"></div>
+<div class="q"><label for="g6">Offres d'emploi actuelles</label><textarea id="g6" name="Offres d'emploi" rows="2"></textarea></div></section>
+
+<section class="step" hidden><h2>9. Être trouvé sur Google</h2>
+<div class="q"><label for="s1">Que tapent vos clients pour vous trouver ?<span class="help">Par exemple : usinage CNC Brabant wallon, réparation pièce mécanique</span></label><textarea id="s1" name="Recherches Google" rows="2"></textarea></div>
+<div class="q"><label for="s2">Villes, régions et pays à viser</label><input type="text" id="s2" name="Zones SEO"></div>
+<div class="q"><label for="s4">Comptes existants<span class="help">Fiche Google, LinkedIn, Facebook, YouTube, Search Console, statistiques</span></label><textarea id="s4" name="Comptes existants" rows="2"></textarea></div></section>
+
+<section class="step" hidden><h2>10. Mentions légales et données</h2>
+<div class="q"><label for="l2">E-mail affiché sur le site</label><input type="email" id="l2" name="E-mail public"></div>
+<div class="q"><span class="t">Voulez-vous une newsletter ?</span><label class="o"><input type="radio" name="Newsletter" value="Oui">Oui</label><label class="o"><input type="radio" name="Newsletter" value="Non">Non</label></div>
+<div class="q"><span class="t">Voulez-vous des statistiques de visites ?</span><label class="o"><input type="radio" name="Statistiques" value="Oui">Oui</label><label class="o"><input type="radio" name="Statistiques" value="Non">Non</label></div>
+<div class="q"><label for="l3">Combien de temps gardez-vous les demandes, plans et candidatures ?</label><input type="text" id="l3" name="Conservation des données"></div></section>
+
+<section class="step" hidden><h2>11. Dernières vérifications</h2>
+<div class="q"><span class="t">Nom à afficher</span><label class="o"><input type="radio" name="Nom affiché" value="GENA SRL">GENA SRL (forme indiquée dans vos comptes déposés en 2025)</label><label class="o"><input type="radio" name="Nom affiché" value="GENA">GENA, sans forme juridique dans les titres</label><label class="o"><input type="radio" name="Nom affiché" value="Gena SPRL">Gena SPRL, comme sur le site actuel</label></div>
+<div class="q"><span class="t">Votre site indique deux horaires. Lequel est correct ?</span><label class="o"><input type="radio" name="Horaires" value="Lun.-jeu. fin 16h, ven. fin 14h">Lun.-jeu. 7h30-12h et 13h-16h, ven. 7h30-12h et 13h-14h</label><label class="o"><input type="radio" name="Horaires" value="Lun.-ven. fin 17h30">Lun.-ven. 7h30-12h et 13h-17h30</label></div>
+<div class="q"><label for="h3">Une date souhaitée pour la mise en ligne ?</label><input type="text" id="h3" name="Date souhaitée"></div>
+<p id="err" role="alert"></p>
+<button class="p" type="button" id="finish" style="width:100%;margin-top:6px">Préparer mes réponses</button>
+<div id="out" hidden><div class="q"><label for="sum">Vos réponses</label><textarea id="sum" readonly></textarea></div><div class="acts"><button type="button" class="p" id="mail">Envoyer par e-mail</button><button type="button" id="copy">Copier</button><button type="button" id="dl">Télécharger</button></div><p class="small" id="note" role="status"></p><p class="small">Vos réponses servent uniquement à préparer votre site. Elles sont transmises par e-mail via un service d'envoi de formulaires ; ne saisissez ni mot de passe ni plan confidentiel.</p></div></section>
+</form>
+<div class="nav"><button type="button" id="prev">Précédent</button><button type="button" class="p" id="next">Suivant</button></div>
+</main>
+<script>
+const WEB3FORMS_KEY='639fedd1-d2ee-4b48-bd7b-afb561c170a7'; // clé d'accès Web3Forms : les réponses arrivent directement par e-mail
+const REPLY_TO='winerfoiner@gmail.com'; // sinon, adresse proposée dans l'e-mail du client
+const f=document.getElementById('f'),steps=[...f.querySelectorAll('.step')];let cur=0;
+const KEY='gena-questionnaire';
+function show(i,focus){cur=Math.max(0,Math.min(steps.length-1,i));steps.forEach((s,k)=>s.hidden=k!==cur);document.getElementById('pg').style.width=((cur+1)/steps.length*100)+'%';document.getElementById('pgt').textContent='Étape '+(cur+1)+' sur '+steps.length;document.getElementById('prev').style.visibility=cur?'visible':'hidden';document.getElementById('next').style.display=cur===steps.length-1?'none':'';if(focus){scrollTo({top:0});steps[cur].querySelector('h2').setAttribute('tabindex','-1');steps[cur].querySelector('h2').focus();}}
+document.getElementById('prev').onclick=()=>show(cur-1,true);document.getElementById('next').onclick=()=>show(cur+1,true);
+const data=()=>{const d={};new FormData(f).forEach((v,k)=>{v=String(v).trim();if(!v)return;d[k]=d[k]?d[k]+', '+v:v;});return d;};
+const save=()=>{try{const a=[...f.elements].filter(e=>e.name).map(e=>[e.type==='checkbox'||e.type==='radio'?e.checked:e.value]);localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}};
+try{const a=JSON.parse(localStorage.getItem(KEY)||'null');if(a)[...f.elements].filter(e=>e.name).forEach((e,i)=>{if(!a[i])return;if(e.type==='checkbox'||e.type==='radio')e.checked=a[i][0];else e.value=a[i][0];});}catch(e){}
+f.addEventListener('input',save);f.addEventListener('submit',e=>e.preventDefault());
+const c=new URLSearchParams(location.search).get('idee');if(c){const r=f.querySelectorAll('[name="Proposition préférée"]')[+c-1];if(r)r.checked=true;}
+f.addEventListener('change',e=>{if(e.target.name==='Image'&&[...f.querySelectorAll('[name=Image]:checked')].length>3)e.target.checked=false;});
+const text=()=>Object.entries(data()).map(([k,v])=>k+' : '+v).join('\n');
+document.getElementById('finish').onclick=()=>{const d=data(),err=document.getElementById('err');err.textContent='';document.getElementById('sum').value=text();document.getElementById('out').hidden=false;document.getElementById('sum').scrollIntoView({block:'center'});};
+const note=m=>document.getElementById('note').textContent=m;
+document.getElementById('copy').onclick=async()=>{const s=document.getElementById('sum');try{await navigator.clipboard.writeText(s.value);note('Réponses copiées. Collez-les dans un e-mail.');}catch(e){s.select();note('Le texte est sélectionné : copiez-le.');}};
+document.getElementById('dl').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([document.getElementById('sum').value],{type:'text/plain;charset=utf-8'}));a.download='GENA-reponses.txt';a.click();note('Fichier téléchargé : joignez-le à un e-mail.');};
+const mailBtn=document.getElementById('mail');if(WEB3FORMS_KEY)mailBtn.textContent='Envoyer mes réponses';
+const mailto=()=>{const t=document.getElementById('sum').value,long=t.length>1700;
+if(long){navigator.clipboard&&navigator.clipboard.writeText(t).catch(()=>{});note('Vos réponses sont longues : elles ont été copiées, collez-les dans l\'e-mail qui s\'ouvre.');}
+location.href='mailto:'+REPLY_TO+'?subject='+encodeURIComponent('Site GENA : questionnaire')+'&body='+encodeURIComponent(long?'Collez ici vos réponses.':t);};
+mailBtn.onclick=async()=>{if(!WEB3FORMS_KEY)return mailto();
+mailBtn.disabled=true;note('Envoi en cours…');
+try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:WEB3FORMS_KEY,subject:'Site GENA : questionnaire',from_name:data()['Nom']||'GENA',botcheck:false,message:document.getElementById('sum').value,...data()})});const j=await r.json();
+if(!r.ok||j.success===false)throw 0;mailBtn.textContent='Réponses envoyées';note('Merci, vos réponses ont bien été envoyées.');try{localStorage.removeItem(KEY);}catch(e){}}
+catch(e){mailBtn.disabled=false;note('L\'envoi a échoué. Copiez vos réponses ou téléchargez-les, puis envoyez-les par e-mail.');}};
+show(0);
+</script></body></html>
